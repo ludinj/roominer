@@ -42,7 +42,7 @@ export default function Home() {
                 <Layers className="icon" />
               </div>
               <h3>Upload your floor plan</h3>
-              <p>Supports JPG, PNG, formats up to 10MB</p>
+              <p>Supports JPG, PNG formats up to 10MB</p>
             </div>
             <p>Upload images</p>
           </div>
@@ -75,7 +75,7 @@ export default function Home() {
                     <Clock size={12} />
                     {/* Make this section dynamic */}
                     <span>{new Date("01-01-2027").toLocaleDateString()}</span>
-                    <span>Bye Ludin Jaimes</span>
+                    <span>By Ludin Jaimes</span>
                   </div>
                 </div>
                 <div className="arrow">
