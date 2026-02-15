@@ -21,7 +21,7 @@ export default function Home() {
           </div>
           <p>Introducing Roominer 2.0</p>
         </div>
-        <h1>Bring you dream spaces to life with Roominer.</h1>
+        <h1>Bring your dream spaces to life with Roominer.</h1>
         <p className="subtitle">
           Roominer is an AI-first design environment that helps you visualize,
           render, and ship architectural projects faster than ever.
@@ -74,7 +74,7 @@ export default function Home() {
                   <div className="meta">
                     <Clock size={12} />
                     {/* Make this section dynamic */}
-                    <span>{new Date("01.01.2027").toLocaleDateString()}</span>
+                    <span>{new Date("01-01-2027").toLocaleDateString()}</span>
                     <span>Bye Ludin Jaimes</span>
                   </div>
                 </div>
