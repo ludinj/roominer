@@ -1,9 +1,9 @@
-import { Box } from "lucide-react";
+import { Box, Loader } from "lucide-react"; // add Loader
 import Button from "./ui/Button";
 import { useOutletContext } from "react-router";
 
 const Navbar = () => {
-  const { isSignIn, signIn, signOut, refreshAuth, userName } =
+  const { isSignIn, signIn, signOut, userName, isAuthLoading } =
     useOutletContext<AuthContext>();
 
   const handleAuthClick = async () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
     try {
       await signIn();
     } catch (error) {
-      console.error(`Puter sign out failed: ${error}`);
+      console.error(`Puter sign in failed: ${error}`);
     }
   };
 
@@ -40,7 +40,9 @@ const Navbar = () => {
         </div>
 
         <div className="actions">
-          {isSignIn ? (
+          {isAuthLoading ? (
+            <Loader className="animate-spin w-5 h-5 text-gray-500" />
+          ) : isSignIn ? (
             <>
               <span className="greeting">
                 {userName ? `Hi ${userName}` : "Signed in"}

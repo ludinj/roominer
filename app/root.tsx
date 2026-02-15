@@ -49,11 +49,12 @@ const DEFAULT_AUTH_STATE: AuthState = {
 };
 export default function App() {
   const [authState, setAuthState] = useState<AuthState>(DEFAULT_AUTH_STATE);
-
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
   useEffect(() => {
     refreshAuth();
   }, []);
   const refreshAuth = async () => {
+    setIsAuthLoading(true);
     try {
       const user = await getCurrentUser();
       setAuthState({
@@ -65,6 +66,8 @@ export default function App() {
     } catch {
       setAuthState(DEFAULT_AUTH_STATE);
       return false;
+    } finally {
+      setIsAuthLoading(false);
     }
   };
 
@@ -87,7 +90,9 @@ export default function App() {
 
   return (
     <main className="min-h-screen bg-background text-foreground relative z-10">
-      <Outlet context={{ ...authState, refreshAuth, signIn, signOut }} />
+      <Outlet
+        context={{ ...authState, refreshAuth, signIn, signOut, isAuthLoading }}
+      />
     </main>
   );
 }
