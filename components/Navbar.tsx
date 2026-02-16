@@ -3,11 +3,11 @@ import Button from "./ui/Button";
 import { useOutletContext } from "react-router";
 
 const Navbar = () => {
-  const { isSignIn, signIn, signOut, userName, isAuthLoading } =
+  const { isSignedIn, signIn, signOut, userName, isAuthLoading } =
     useOutletContext<AuthContext>();
 
   const handleAuthClick = async () => {
-    if (isSignIn) {
+    if (isSignedIn) {
       try {
         await signOut();
       } catch (error) {
@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className="actions">
           {isAuthLoading ? (
             <Loader className="animate-spin w-5 h-5 text-gray-500" />
-          ) : isSignIn ? (
+          ) : isSignedIn ? (
             <>
               <span className="greeting">
                 {userName ? `Hi ${userName}` : "Signed in"}

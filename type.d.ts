@@ -1,13 +1,14 @@
 interface AuthState {
-  isSignIn: boolean;
+  isSignedIn: boolean;
   userName: string | null;
   userId: string | null;
 }
 
 type AuthContext = {
-  isSignIn: boolean;
+  isSignedIn: boolean;
   userName: string | null;
   userId: string | null;
+  isAuthLoading: boolean;
   refreshAuth: () => Promise<boolean>;
   signIn: () => Promise<boolean>;
   signOut: () => Promise<boolean>;
