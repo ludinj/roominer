@@ -43,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 const DEFAULT_AUTH_STATE: AuthState = {
-  isSignIn: false,
+  isSignedIn: false,
   userName: null,
   userId: null,
 };
@@ -58,7 +58,7 @@ export default function App() {
     try {
       const user = await getCurrentUser();
       setAuthState({
-        isSignIn: !!user,
+        isSignedIn: !!user,
         userName: user?.username || null,
         userId: user?.uuid || null,
       });
