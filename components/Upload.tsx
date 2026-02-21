@@ -115,7 +115,7 @@ const Upload = ({ onComplete }: UploadProps) => {
           <input
             type="file"
             className="drop-input"
-            accept=".jpg,.jpeg,.png,.webp"
+            accept=".jpg,.jpeg,.png"
             disabled={!isSignedIn}
             onChange={handleChange}
           />
@@ -129,7 +129,7 @@ const Upload = ({ onComplete }: UploadProps) => {
                 ? "Click to upload or just drag and drop"
                 : "Sign in or sign up with Puter to upload"}
             </p>
-            <p className="help">Maximum file size 50 MB.</p>
+            <p className="help">Maximum file size 10MB.</p>
           </div>
         </div>
       ) : (
