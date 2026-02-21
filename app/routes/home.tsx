@@ -34,13 +34,11 @@ export default function Home() {
       console.error("Failed to  create project");
       return false;
     }
-    setProjects((pre) => [newItem, ...pre]);
-    console.log("saved.sourceImage", saved.sourceImage);
-    console.log("saved", saved);
+    setProjects((pre) => [saved, ...pre]);
     navigate(`/visualizer/${newId}`, {
       state: {
         initialImage: saved.sourceImage,
-        initialRendered: saved.renderedImage,
+        initialRender: saved.renderedImage,
         name,
       },
     });

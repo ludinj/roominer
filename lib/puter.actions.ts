@@ -49,11 +49,6 @@ export const createProject = async ({
     hostedSource?.url && isHostedUrl(hostedSource?.url)
       ? hostedSource?.url
       : item.sourceImage;
-  const isHosted = isHostedUrl(hostedSource?.url);
-  console.log("hostedSource", hostedSource);
-  console.log("isHosted", isHosted);
-  console.log("hostedSource", isHostedUrl);
-  console.log("resolvedSource", resolvedSource);
 
   if (!resolvedSource) {
     console.warn("Failed to host source image, skipping save");
