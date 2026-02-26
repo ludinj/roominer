@@ -31,7 +31,7 @@ export default function Home() {
     };
     const saved = await createProject({ item: newItem, visibility: "private" });
     if (!saved) {
-      console.error("Failed to  create project");
+      console.error("Failed to create project");
       return false;
     }
     setProjects((pre) => [saved, ...pre]);

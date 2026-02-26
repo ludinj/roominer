@@ -125,7 +125,7 @@
         }
 
         .links {
-          @apply hidden md:flex items-center space-x-6;
+          @apply hidden md:flex items-center space-x-6 list-none;
 
           a {
             @apply text-sm font-medium text-zinc-600 hover:text-black transition-colors;
