@@ -34,7 +34,6 @@ const VisualizerId = () => {
       const result = await generate3DView({ sourceImage: initialImage });
 
       if (result.renderedImage) {
-        console.log(result.renderedImage, "renderedImage");
         setCurrentImage(result.renderedImage);
         // update the project with the rendered image
       }
@@ -44,9 +43,7 @@ const VisualizerId = () => {
       setIsProcessing(false);
     }
   };
-  useEffect(() => {
-    console.log("current", currentImage);
-  }, [currentImage]);
+
   return (
     <div className="visualizer">
       <nav className="topbar">
