@@ -11,7 +11,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import { useEffect, useState } from "react";
 import { getCurrentUser, signInPuter, signOutPuter } from "lib/puter.actions";
-
+import { Toaster } from "sonner";
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -38,6 +38,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );
